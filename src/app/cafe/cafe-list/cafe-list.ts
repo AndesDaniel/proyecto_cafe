@@ -1,4 +1,4 @@
-import { Component, OnInit,signal } from '@angular/core';
+import { Component, OnInit, signal, computed } from '@angular/core';
 import { Cafe } from '../cafe';
 import { CafeService } from '../cafe.service';
 
@@ -9,7 +9,7 @@ import { CafeService } from '../cafe.service';
   templateUrl: './cafe-list.html',
 })
 export class CafeList implements OnInit {
-  
+
   cafes = signal<Cafe[]>([]);
 
   constructor(private cafeService: CafeService) { }
@@ -23,5 +23,13 @@ export class CafeList implements OnInit {
   ngOnInit() {
     this.getCafesList();
   }
+  tipos = computed(() => {
+    const totales: Record<string, number> = {};
+    for (const cafe of this.cafes()) {
+      totales[cafe.tipo] = (totales[cafe.tipo] ?? 0) + 1;
+    }
+    return Object.entries(totales).map(([tipo, total]) => ({ tipo, total }));
+
+  });
 
 }

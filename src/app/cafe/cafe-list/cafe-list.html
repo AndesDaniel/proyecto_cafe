@@ -27,4 +27,11 @@
       </tbody>
     </table>
   </div>
+  <div>
+    <ul class="list-unstyled">
+      <li *ngFor="let item of tipos()">
+        <p> Total de cafe {{item.tipo}} : {{item.total}}</p>
+      </li>
+    </ul>
+  </div>
 </div>
