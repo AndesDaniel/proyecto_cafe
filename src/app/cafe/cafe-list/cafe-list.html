@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="col-6">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+        <th class="h5">#</th>
+        <th class="h5">Nombre</th>
+        <th class="h5">Tipo</th>
+        <th class="h5">Región</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of cafes()">
+          <td>
+            <dd>{{c.id}}</dd>
+          </td>
+          <td>
+            <dd>{{c.nombre}}</dd>
+          </td>
+          <td>
+            <dd>{{c.tipo}}</dd>
+          </td>
+          <td>
+            <dd>{{c.region}}</dd>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <ul class="list-unstyled">
+      <li *ngFor="let item of tipos()">
+        <p> Total de cafe {{item.tipo}} : {{item.total}}</p>
+      </li>
+    </ul>
+  </div>
+</div>

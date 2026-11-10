@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.titulo {
+  font-family: 'Gochi Hand', cursive;
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.banner {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;        /* recorta la imagen sin deformarla */
+  object-position: left center;
+}
